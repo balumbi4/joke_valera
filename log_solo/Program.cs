@@ -13,11 +13,13 @@ namespace log_solo
     internal class Program
     {
         private static readonly ILog _log = LogManager.GetLogger(typeof(Program));
+
         static void Main(string[] args)
         {
             XmlConfigurator.Configure(new FileInfo("../../../loggerConfig.xml"));
             _log.Info("я работаю)");
             Out();
+            Pejoi pejoi = new Pejoi();
         }
         static private void Out()
         {
@@ -50,8 +52,10 @@ namespace log_solo
     }
     class Exp52 : Exception
     {
+        
         public Exp52() : base() { }
         public Exp52(string massage) : base(massage) { }
     }
+    
 }
 
